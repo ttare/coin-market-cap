@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
 } from 'react-router-dom'
 
@@ -13,7 +12,7 @@ import Settings from './screens/settings'
 
 class App extends Component {
   render() {
-    const {currency} = this.props.app;
+    const {currency} = this.props;
     return (
       <Router>
         <div>
@@ -29,7 +28,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  ...state
+  currency: state.app.currency
 });
 
 export default connect(mapStateToProps)(App);
